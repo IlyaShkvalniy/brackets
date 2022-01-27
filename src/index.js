@@ -1,5 +1,5 @@
 module.exports = function check(str, bracketsConfig) {
-    if( str.split('').length % 2 !== 0) return false;
+    if( str.length % 2 !== 0) return false;
     arr1 = bracketsConfig.map( item => item.reduce( ( acc, cur) => acc+ cur))
     let strin = str;    
     for ( let i = 0 ; i < str.length /2 ; i++){
@@ -7,8 +7,5 @@ module.exports = function check(str, bracketsConfig) {
             strin = strin.split(arr1[j]).join('')
         }
     }
-
-
     return strin.length > 0 ? false : true
-
 }
